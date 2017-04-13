@@ -23,6 +23,9 @@ public class Main {
 		Artista a = new Artista();
 		a.setNome("Paolo");
 		
+		Artista a2 = new Artista();
+		a2.setNome("Marco");
+		
 		Stanza s = new Stanza();
 		s.setNome("N11");
 		s.setPiano("PT");
