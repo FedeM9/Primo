@@ -32,6 +32,11 @@ public class Main {
 		Stanza s2=new Stanza();
 		s2.setNome("N10");
 		s2.setPiano("PT");
+		
+		Stanza s3=new Stanza();
+		s3.setNome("N12");
+		s3.setPiano("PT");		
+		
 		CrudRepository<Artista> artistaRep= new CrudRepository<Artista>(em,Artista.class);
 		CrudRepository<Stanza> stanzaRep = new CrudRepository<Stanza>(em,Stanza.class);
 		EntityTransaction tx = em.getTransaction();
