@@ -11,13 +11,13 @@
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="postgres" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/museo" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/postgres" />
 
 		<!-- Hibernate properties -->
 	        		<property name="hibernate.show_sql" value="true" />
             		<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
 	</persistence-unit>
 	<persistence-unit name="museo-unit-test" transaction-type="RESOURCE_LOCAL">
@@ -29,7 +29,7 @@
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="postgres" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/museo" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/postgres" />
 
 		<!-- Hibernate properties -->
 	        		<property name="hibernate.show_sql" value="true" />

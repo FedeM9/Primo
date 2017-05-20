@@ -5,7 +5,7 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
-public class Artista {
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -13,7 +13,7 @@ public class Artista {
 	@ManyToMany
 	private List<Opera> opere;
 	
-	public Artista(){
+	public Product(){
 		this.opere = new LinkedList<>();
 	}
 	

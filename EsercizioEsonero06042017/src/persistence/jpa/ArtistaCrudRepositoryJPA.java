@@ -2,7 +2,7 @@ package persistence.jpa;
 
 import java.util.List;
 import javax.persistence.*;
-import model.Artista;
+import model.Product;
 import persistence.ArtistaCrudRepository;
 
 public class ArtistaCrudRepositoryJPA implements ArtistaCrudRepository {
@@ -13,7 +13,7 @@ public class ArtistaCrudRepositoryJPA implements ArtistaCrudRepository {
 	
 	}
 	@Override
-	public Artista save(Artista artista) { //permette di fare la persist o l'update
+	public Product save(Product artista) { //permette di fare la persist o l'update
 		if(artista.getId()==null)
 			em.persist(artista);
 		else
@@ -22,20 +22,20 @@ public class ArtistaCrudRepositoryJPA implements ArtistaCrudRepository {
 	}
 
 	@Override
-	public Artista findOne(Long id) {
-		return em.find(Artista.class, id);
+	public Product findOne(Long id) {
+		return em.find(Product.class, id);
 		
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Artista> findAll() {
+	public List<Product> findAll() {
 		Query query= em.createQuery("SELECT a FROM ARTISTA a");
 		return query.getResultList();
 	}
 
 	@Override
-	public void delete(Artista artista) {
+	public void delete(Product artista) {
 		em.remove(artista);
 		
 	}

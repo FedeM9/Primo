@@ -1,10 +1,12 @@
-package persistence;
+package it.uniroma3.repository;
 
 import java.util.List;
 
-import model.Product;
+import it.uniroma3.model.Product;
 
-public interface ArtistaCrudRepository {
+
+
+public interface ProductCrudRepository {
 	public Product save(Product artista);
 	public Product findOne(Long id);
 	public List<Product> findAll();

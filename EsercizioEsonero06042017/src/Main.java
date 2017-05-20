@@ -7,23 +7,21 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 
-import model.Artista;
+import model.Product;
 import model.Stanza;
-import persistence.ArtistaCrudRepository;
-import persistence.jpa.ArtistaCrudRepositoryJPA;
 import persistence.jpa.CrudRepository;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		EntityManagerFactory emf=Persistence.createEntityManagerFactory("museo-unit"); //importare XML
 		EntityManager em=emf.createEntityManager();
 		
-		Artista a = new Artista();
+		Product a = new Product();
 		a.setNome("Paolo");
 		
-		Artista a2 = new Artista();
+		Product a2 = new Product();
 		a2.setNome("Marco");
 		
 		Stanza s = new Stanza();
@@ -37,15 +35,15 @@ public class Main {
 		s3.setNome("N12");
 		s3.setPiano("PT");		
 		
-		CrudRepository<Artista> artistaRep= new CrudRepository<Artista>(em,Artista.class);
+		CrudRepository<Product> artistaRep= new CrudRepository<Product>(em,Product.class);
 		CrudRepository<Stanza> stanzaRep = new CrudRepository<Stanza>(em,Stanza.class);
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		artistaRep.save(a);
 		stanzaRep.save(s);
 		tx.commit();
-	List<Artista> artisti = artistaRep.findAll();
-		for(Artista art : artisti)
+	List<Product> artisti = artistaRep.findAll();
+		for(Product art : artisti)
 			System.out.println(art.toString());
 		
 		em.close();

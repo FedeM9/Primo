@@ -14,7 +14,7 @@ public class Opera {
 	private String anno;
 	
 	@ManyToMany(mappedBy="opere")
-	private List<Artista> artisti;
+	private List<Product> artisti;
 
 	public Opera(){
 		this.artisti=new LinkedList<>();
@@ -43,11 +43,11 @@ public class Opera {
 		this.anno = anno;
 	}
 
-	public List<Artista> getArtisti() {
+	public List<Product> getArtisti() {
 		return artisti;
 	}
 
-	public void setArtisti(List<Artista> artisti) {
+	public void setArtisti(List<Product> artisti) {
 		this.artisti = artisti;
 	}
 	
