@@ -9,7 +9,7 @@
 	<h1>Lista Prodotti:</h1>
 	<ul>
 		<c:forEach var="product" items="${prodotti}">
-			<li><a href="product?id=${product.id}">${product.name}</a>
+			<li><a href="prodotto?id=${product.id}">${product.name}</a>
 				<form action="prodotto" method="post">
 					<input type="hidden" value="${prodotto.id }" name="id"/>
 					<input type="button" name="command" value="rimuovi" />

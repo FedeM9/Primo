@@ -8,6 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+
 import it.uniroma3.model.Product;
 import it.uniroma3.repository.ProductRepository;
 
@@ -21,6 +22,7 @@ public class ProductService {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("products-unit");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		tx.begin();
 		em.persist(prodotto);
 		tx.commit();
 	
@@ -31,7 +33,7 @@ public class ProductService {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		//ProductRepository rep =new  ProductRepository(this.em);
-		
+		tx.begin();
 		TypedQuery<Product> query= em.createNamedQuery("findAllProducts", Product.class);
 		List<Product> prodotti=query.getResultList();
 		tx.commit();
@@ -40,10 +42,14 @@ public class ProductService {
 		return prodotti;
 	}
 	public Product getOnePrduct(Long id) {
-//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("products-unit");
-//		this.em = emf.createEntityManager();
-//		ProductRepository rep =new  ProductRepository(this.em);
-//		
-		return null;
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("products-unit");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Product prodotto = em.find(Product.class, id);
+		tx.commit();
+		em.close();
+		emf.close();
+		return prodotto;
 	}
 }

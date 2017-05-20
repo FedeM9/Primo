@@ -52,8 +52,8 @@ public class ControllerProdotto extends HttpServlet{
 		if(request.getParameter("id")!=null){ //se nella richiesto ho l'id faccio questo
 			Long id= Long.parseLong(request.getParameter("id"));
 			Product one = service.getOnePrduct(id);
-			request.setAttribute("prodtto", one);
-			nextPage="prodotto.jsp";
+			request.setAttribute("prodotto", one);
+			nextPage="/prodotto.jsp";
 		}else{		
 			List<Product> prodotti=service.getProducts();
 			request.setAttribute("prodotti",prodotti);
